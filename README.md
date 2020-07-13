@@ -25,13 +25,12 @@ Technologijos: Java >=1.7
 
 Apie IBAN: https://en.wikipedia.org/wiki/International_Bank_Account_Number  
 
-## Programos vystimasis 
+## Programos vystymasis
 Iš eilės tikrinama:
 1. IBAN numerio ilgis
 1. Ar yra nevartotinų simbolių IBAN numeryje.
 1. IBAN kontrolinė suma
 1. Šalies IBAN palaikymas
-
 
 Neatliekami tikrinimai:
 * Sąskaitors numerio kontrolinės sumos (BBAN) tikrinimas (šalys turi skirtingus BBAN formatus)
@@ -44,7 +43,7 @@ Spausdinami rezultatai terminale:
 * `IBAN nėra validus - Šalies nepalaiko IBAN`
 * `IBAN yra validus`
 
-## Projekto struktūra:
+## Projekto struktūra
 * Iban
   * `IbanAPI.java`
   * `InputHandling.java`
