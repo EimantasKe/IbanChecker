@@ -1,36 +1,65 @@
 # IbanChecker
+## Užduotis: sąskaitų numerių IBAN tikrinimas
+Parašyti programėlę, kuri dirbtų dviem rėžimais:
+- [x]  Interaktyvus IBAN numerių tikrinimas. Vartotojo paprašoma įvesti sąskaitos numerį ir programa išveda ar numeris yra teisingas
+- [x] IBAN numerių iš tekstinio failo tikrinimas. Vartotojo paprašoma įvesti failo kelią ir pavadinimą. Programa nuskaito failą ir sutikrina sąskaitos numerius. Rezultatus išveda į tokio pat pavadinimo failą su plėtiniu .out. 
+
+        Pradinio failo struktūra: kiekviena eilutė - vienas sąskaitos numeris IBAN. Pvz:
+            AA051245445454552117989
+            LT647044001231465456
+            LT517044077788877777
+            LT227044077788877777
+            CC051245445454552117989
+
+        Rezultato failo struktūra: IBAN;valid. Pvz:
+            AA051245445454552117989;false
+            LT647044001231465456;true
+            LT517044077788877777;true
+            LT227044077788877777;false
+            CC051245445454552117989;false
+- [ ] (Papildoma) Servisas, kuris validuotų IBAN sąrašą. Protokolas http: Soap ir REST. 		
+
+Vartotojo sąsajai laisvas pasirinkimas (gali būti ir terminalė sąsaja).
+
+Technologijos: Java >=1.7
+
+Apie IBAN: https://en.wikipedia.org/wiki/International_Bank_Account_Number  
+
+## Programos vystimasis 
+Iš eilės tikrinama:
+1. IBAN numerio ilgis
+1. Ar yra nevartotinų simbolių IBAN numeryje.
+1. IBAN kontrolinė suma
+1. Šalies IBAN palaikymas
 
 
+Neatliekami tikrinimai:
+* Sąskaitors numerio kontrolinės sumos (BBAN) tikrinimas (šalys turi skirtingus BBAN formatus)
+* IBAN formatas ir struktūra (šalys turi skirtingus formatus ir struktūras)
 
-https://www.iban.com/
+Spausdinami rezultatai terminale:
+* `IBAN nėra validus - Netinkamas IBAN numerio ilgis`
+* `IBAN nėra validus - Numeryje yra nevartotinų simbolių`
+* `IBAN nėra validus - Netinkama IBAN kontrolinė suma`
+* `IBAN nėra validus - Šalies nepalaiko IBAN`
+* `IBAN yra validus`
 
-Projekto struktūra:
+## Projekto struktūra:
 * Iban
-  * IbanAPI
-  * InputHandling
-* IbanCheck
+  * `IbanAPI.java`
+  * `InputHandling.java`
+* `IbanCheck.java`
+* Tests
+ * `FailCheckTests.java`
+ * `PassCheckTests.java`
+ * `TestRunner`
 
+## Darbų sąrašas
+* Sukurti daugiau testų
+* Išskaidyti turimas funkcijas toliau, kad galima būtu testuoti skirtingas funkcijų dalis
+* Sąskaitos numerio kontrolinės sumos (BBAN) tikrinimas (šalys turi skirtingus BBAN formatus)
+* IBAN formatas ir struktūra (šalys turi skirtingus formatus ir struktūras)
+* Padaryti service, kuris validuotu IBAN naudojantis jau sukurtomis funkcijomis
 
-
-
-
-Būsenos kodas - Tipas - Aprašymas:
-
-* 301 - Paskyros klaida -	API raktas negalioja
-* 302 - Paskyros klaida -	Prenumerata pasibaigusi
-* 303 - Paskyros klaida -	Nėra galimų užklausų
-* 304 - Paskyros klaida - Jūs neturite prieigos prie šio API
-* 305 - Paskyros klaida -	IP adresas neleidžiamas
-* 201 - Patvirtinimas nepavyko - Paskyros numerio patikros skaitmuo neteisingas
-* 202 - Patvirtinimas nepavyko - IBAN patikros skaitmuo neteisingas
-* 203 - Patvirtinimas nepavyko - IBAN ilgis neteisingas
-* 205 - Patvirtinimas nepavyko - IBAN struktūra neteisinga
-* 206 - Patvirtinimas nepavyko - IBAN yra negalimų simbolių
-* 207 - Patvirtinimas nepavyko - Šalis nepalaiko IBAN standarto
-* 001 - Patvirtinimas pavyko - IBAN patikros skaitmuo yra teisingas
-* 002 - Patvirtinimas pavyko - Sąskaitos numerio patikros skaitmuo yra teisingas
-* 003 - Patvirtinimas pavyko - IBAN ilgis teisingas
-* 004 - Patvirtinimas pavyko - Paskyros numerio patikros skaitmuo šiam bankui ar filialui nėra atliekamas
-* 005 - Patvirtinimas pavyko - IBAN struktūra yra teisinga
-* 006 - Patvirtinimas pavyko - IBAN nėra negalimų simbolių
-* 007 - Patvirtinimas pavyko - Šalis palaiko IBAN standartą
+## Kitas galimas funkcionalumas
+* Grafinė sąsaja
