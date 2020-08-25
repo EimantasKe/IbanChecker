@@ -1,6 +1,5 @@
 # IbanChecker
-## Užduotis: sąskaitų numerių IBAN tikrinimas
-Parašyti programėlę, kuri dirbtų dviem rėžimais:
+## Sąskaitų numerių IBAN tikrinimas
 - [x]  Interaktyvus IBAN numerių tikrinimas. Vartotojo paprašoma įvesti sąskaitos numerį ir programa išveda ar numeris yra teisingas
 - [x] IBAN numerių iš tekstinio failo tikrinimas. Vartotojo paprašoma įvesti failo kelią ir pavadinimą. Programa nuskaito failą ir sutikrina sąskaitos numerius. Rezultatus išveda į tokio pat pavadinimo failą su plėtiniu .out. 
 
@@ -17,12 +16,7 @@ Parašyti programėlę, kuri dirbtų dviem rėžimais:
             LT517044077788877777;true
             LT227044077788877777;false
             CC051245445454552117989;false
-- [ ] (Papildoma) Servisas, kuris validuotų IBAN sąrašą. Protokolas http: Soap ir REST. 		
-
-Vartotojo sąsajai laisvas pasirinkimas (gali būti ir terminalė sąsaja).
-
-Technologijos: Java >=1.7
-
+            
 Apie IBAN: https://en.wikipedia.org/wiki/International_Bank_Account_Number  
 
 ## Programos vystymasis
